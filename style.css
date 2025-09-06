@@ -1,0 +1,391 @@
+/* --------- Reset básico --------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --------- Layout general --------- */
+html, body {
+    height: 100%;              
+    display: flex;
+    flex-direction: column;    
+    margin: 0;
+}
+
+main {
+    flex: 1; /* empuja el footer pa abajo */
+}
+
+/*Configuración general  */
+body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, rgb(13 11 51 / 85%), rgb(42 24 93 / 85%)),
+                url("../images/fondo-casino.png") no-repeat center center fixed;
+    background-size: cover;
+    color: #eaeaea;
+}
+
+/* --------- Encabezado --------- */
+header {
+    background: linear-gradient(90deg, #1a1440, #2a185d);
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* --------- Navegación --------- */
+nav {
+    background: #0d0b33;
+    padding: 12px 0;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 50%);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    color: #eaeaea;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Subrayado animado */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #00e5ff;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #00e5ff;
+    text-shadow: 0 0 8px #00e5ff;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* --------- Secciones principales --------- */
+main {
+    max-width: 950px;
+    margin: 40px auto;
+    padding: 25px;
+    background: rgb(20 15 50 / 85%);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgb(0 0 0 / 60%);
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+h2 {
+    color: #bb86fc;
+    margin-bottom: 12px;
+}
+
+/* Animación y brillo en títulos */
+h1, h2 {
+    animation: fadeInDown 1s ease;
+    text-shadow: 0 0 8px rgb(0 229 255 / 60%);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --------- Formularios --------- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, button {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+}
+
+input {
+    background: #f5f5f5;
+    color: #111;
+}
+
+input:focus {
+    outline: 2px solid #00e5ff;
+}
+
+/* --------- Botones --------- */
+button {
+    background: linear-gradient(90deg, #6a00f4, #bb86fc);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px #bb86fc, 0 0 15px #00e5ff;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgb(187 134 252 / 60%); }
+    70% { box-shadow: 0 0 0 15px rgb(187 134 252 / 0%); }
+    100% { box-shadow: 0 0 0 0 rgb(187 134 252 / 0%); }
+}
+
+/* --------- Tarjetas --------- */
+.card {
+    background: #1f1847;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0 0 8px rgb(0 0 0 / 40%);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: perspective(1000px) rotateX(5deg);
+    box-shadow: 0 10px 20px rgb(0 229 255 / 40%);
+}
+
+/* --------- Listas --------- */
+ul li {
+    margin: 8px 0;
+}
+
+/* --------- Pie de página --------- */
+footer {
+    text-align: center;
+    background: #0d0b33;
+    color: #bbb;
+    padding: 18px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 6px rgb(0 0 0 / 50%);
+}
+
+/* --------- Avatar del perfil --------- */
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;                /* hace el círculo */
+    border: 3px solid #bb86fc;         /* borde morado elegante */
+    box-shadow: 0 0 12px #00e5ff;      /* brillo azul */
+    display: block;
+    margin: 0 auto 20px;          /* centrado y espacio abajo */
+}
+
+.perfil-card {
+    text-align: center;                /* centra el contenido dentro de la card */
+}
+
+/* --------- Ruleta --------- */
+.ruleta-container {
+    display: flex;
+    flex-wrap: wrap; /* permite que tablero e info se acomoden en pantallas pequeñas */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.rueda img {
+    width: 280px; /* tamaño más grande */
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgb(0 229 255 / 50%);
+    transition: transform 0.3s ease;
+}
+
+.rueda img:hover {
+    transform: scale(1.05); /* animación al pasar el mouse */
+}
+
+/* Tablero de apuestas */
+.tablero {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.apuestas {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.apuestas td {
+    border: 1px solid rgb(255 255 255 / 30%);
+    padding: 8px;
+    font-weight: bold;
+}
+
+.apuestas .cero {
+    background-color: #00e676;
+    color: #111;
+    font-weight: bold;
+}
+
+.apuestas .rojo {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.apuestas .negro {
+    background-color: #212121;
+    color: white;
+}
+
+/* Botones extra */
+.extras {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.extras button {
+    flex: 1 1 120px;
+    background: linear-gradient(90deg, #6a00f4, #bb86fc);
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.extras button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px #bb86fc, 0 0 15px #00e5ff;
+}
+
+/* Info del juego */
+.info {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    background: rgb(31 24 71 / 90%);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+}
+
+/* --------- Mesa de Ruleta --------- */
+
+/* --------- Mesa de Ruleta --------- */
+.ruleta-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 30px;
+    background: linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
+                url("../images/madera.png") center center;
+    background-size: cover;
+    border-radius: 14px;
+    box-shadow: 0 0 18px rgb(0 229 255 / 30%);
+}
+
+.tablero {
+    flex: 1;
+    min-width: 350px;       /* más ancho mínimo */
+    max-width: 650px;       /* más ancho total */
+    background: #1f1847;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgb(0 229 255 / 30%);
+}
+
+/* --------- Botón con imagen para la ruleta --------- */
+.boton-ruleta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(90deg, #6a00f4, #bb86fc);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgb(0 0 0 / 50%);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.boton-ruleta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #bb86fc, 0 0 18px #00e5ff;
+}
+
+.icono-boton {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 8px rgb(0 229 255 / 60%);
+}
+
+/* --------- Fondo para la sección de Ruleta --------- */
+.card-ruleta {
+    background: linear-gradient(rgb(20 15 50 / 85%), rgb(20 15 50 / 85%)),
+                url("../images/ruleta.inicio.png") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgb(0 0 0 / 60%);
+}
+
+
+
